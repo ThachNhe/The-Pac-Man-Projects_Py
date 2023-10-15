@@ -34,8 +34,18 @@ def buyLotsOfFruit(orderList):
 
     Returns cost of order
     """
-    totalCost = 0.0
     "*** YOUR CODE HERE ***"
+    totalCost = 0.0
+    fruit_names = []
+
+    for item in orderList:
+        fruit_names.append(item[0])    
+
+    i = 0
+    for fruit in fruit_names:
+            price = orderList[i]
+            i += 1
+            totalCost += fruitPrices[fruit]*price[1]
     return totalCost
 
 
@@ -44,3 +54,6 @@ if __name__ == '__main__':
     "This code runs when you invoke the script from the command line"
     orderList = [('apples', 2.0), ('pears', 3.0), ('limes', 4.0)]
     print('Cost of', orderList, 'is', buyLotsOfFruit(orderList))
+# orderList = [('apples', 2.0), ('pears', 3.0), ('limes', 4.0)]
+# price = orderList[0];
+# print(price[1])
